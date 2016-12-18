@@ -1,0 +1,35 @@
+﻿<div class="row green">
+    <div class="col">
+        <header class="header">
+            <h3 class="">Dashboard</h3>
+        </header>
+    </div>
+</div>
+<ul id="slide-out" class="side-nav fixed">
+    <li class=""><img src="http://www.fillmurray.com/300/200" /></li>
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+<div class="row grey">
+    <div class="col">
+            <div class="container grey">
+                <div class="col s12 m9 l10">
+                    <div id="right" class="section"></div>
+                </div>
+            </div>
+    </div>
+</div>
+
+@*TODO: Figure out why this shit doesn't execute.*@
+<script type="text/javascript">
+    $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 240
+        edge: 'right', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens
+    })();
+</script>

@@ -8,26 +8,20 @@ namespace CoreBlog.NET.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("", Name = "Index")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        [Route("SignIn", Name = "SignIn")]
+        public IActionResult SignIn()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
+        [Route("Admin", Name = "Admin")]
+        public IActionResult Admin()
         {
             return View();
         }
