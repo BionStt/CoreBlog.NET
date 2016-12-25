@@ -1,26 +1,40 @@
-﻿/* Temporary rules */
+﻿/*Page layout fixes*/
 
-.admin-dashboard-top {
-    background-color: #E57373;
-    height: 42px;
-}
-
-.admin-dashboard-left {
-    background-color: #90a4ae;
-    height: 300px;
-}
-
-.admin-dashboard-right {
-    background-color: #26a69a;
-    height: 300px;
-}
-
-header, main, footer {
+main, footer {
     padding-left: 300px;
 }
 
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;
+    }
+}
+
+
+/*Other styling*/
+
+.button-link {
+    background-color: #3f51b5;
+    border: none;
+    display: block;
+    padding: 0px 15px 0px 15px;
+    text-align: left;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+    .button-link:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .button-link:focus {
+        background-color: transparent;
+        outline: 2px solid Highlight;
+    }
+
+@media (-webkit-min-device-pixel-ratio:0) {
+    .button-link:focus {
+        outline: 5px auto -webkit-focus-ring-color;
     }
 }

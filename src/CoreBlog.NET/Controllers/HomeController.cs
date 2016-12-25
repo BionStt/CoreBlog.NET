@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using CoreBlog.NET.Models.AccountViewModels;
 
 namespace CoreBlog.NET.Controllers
 {
@@ -11,15 +9,17 @@ namespace CoreBlog.NET.Controllers
         [Route("", Name = "Index")]
         public IActionResult Index()
         {
-            return View();
+            return View(); 
         }
 
         [Route("SignIn", Name = "SignIn")]
-        public IActionResult SignIn()
+        public IActionResult SignIn(string returnUrl = null)
         {
-            return View();
+            var model = new LoginViewModel { ReturnUrl = returnUrl };
+            return View(model);
         }
 
+        [Authorize]
         [Route("Admin", Name = "Admin")]
         public IActionResult Admin()
         {

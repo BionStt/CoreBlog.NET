@@ -1,35 +1,79 @@
-﻿<div class="row green">
-    <div class="col">
-        <header class="header">
-            <h3 class="">Dashboard</h3>
-        </header>
+﻿<header>
+    <div class="navbar-fixed topNavBar">
+        <nav class="indigo">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" class="brand-logo">CoreBlog.NET</a>
+                <ul class="right">
+                    <li><a href="#!">Account</a></li>
+                    <li>
+                        <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="">
+                            <button type="submit" class="button-link">Log off</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-</div>
-<ul id="slide-out" class="side-nav fixed">
-    <li class=""><img src="http://www.fillmurray.com/300/200" /></li>
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-</ul>
 
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="side-nav fixed">
+        <li>
+            <div class="userView">
+                <div class="background">
+                    <img src="~/images/userViewBackground_1.jpg" />
+                </div>
+                <a href="#!user"><img class="circle" src="http://www.fillmurray.com/55/55" alt="Profile picture" /></a>
+                <a href="#!name"><span class="white-text name">Bill Murray</span></a>
+                <a href="#!email"><span class="white-text email">b.murray@aol.net</span></a>
+            </div>
+        </li>
+        <li class="active"><a href="#!">First Sidebar Link</a></li>
+        <li class=""><a href="#!">Second Sidebar Link</a></li>
+        <li class=""><a href="#!">Third Sidebar Link</a></li>
+    </ul>
+</header>
 
 
-<div class="row grey">
-    <div class="col">
-            <div class="container grey">
-                <div class="col s12 m9 l10">
-                    <div id="right" class="section"></div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel">
+                    <p>"No," said Aouda.  "He has not made his appearance since yesterday. Could he have gone on board the Carnatic without us?"</p>
+                    <p>"Without you, madam?" answered the detective.  "Excuse me, did you intend to sail in the Carnatic?"</p>
+                    <p>"Yes, sir."</p>
+                    <p>"So did I, madam, and I am excessively disappointed.  The Carnatic, its repairs being completed, left Hong Kong twelve hours before the stated time, without any notice being given; and we must now wait a week for another steamer."</p>
+                    <p>As he said "a week" Fix felt his heart leap for joy.  Fogg detained at Hong Kong for a week!  There would be time for the warrant to arrive, and fortune at last favoured the representative of the law.  His horror may be imagined when he heard Mr. Fogg say, in his placid voice, "But there are other vessels besides the Carnatic, it seems to me, in the harbour of Hong Kong."</p>
+                    <p>And, offering his arm to Aouda, he directed his steps toward the docks in search of some craft about to start.  Fix, stupefied, followed; it seemed as if he were attached to Mr. Fogg by an invisible thread. Chance, however, appeared really to have abandoned the man it had hitherto served so well.  For three hours Phileas Fogg wandered about the docks, with the determination, if necessary, to charter a vessel to carry him to Yokohama; but he could only find vessels which were loading or unloading, and which could not therefore set sail.  Fix began to hope again.</p>
+                    <p>But Mr. Fogg, far from being discouraged, was continuing his search, resolved not to stop if he had to resort to Macao, when he was accosted by a sailor on one of the wharves.</p>
+                    <p>"Is your honour looking for a boat?"</p>
+                    <p>"Have you a boat ready to sail?"</p>
+                    <p>"Yes, your honour; a pilot-boat&mdash;No. 43&mdash;the best in the harbour."</p>
                 </div>
             </div>
+        </div>
     </div>
-</div>
+</main>
 
-@*TODO: Figure out why this shit doesn't execute.*@
+@* HACK: We need to load these from the proper place, ensuring it loads before this page's scripts. Use RenderScripts section, probably. *@
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="~/lib/materialize/dist/js/materialize.js"></script>
+
+@* TODO:
+    Adjust width at which page changes. Possibly something like this:
+        @media only screen and (min-width: 993px) {
+        nav a.button-collapse {
+            display: none;
+        }
+*@
+
+@* TODO: Automatically hide scroll bar until hovered over. *@
+
 <script type="text/javascript">
     $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 240
-        edge: 'right', // Choose the horizontal origin
-        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        draggable: true // Choose whether you can drag to open on touch screens
-    })();
+        //menuWidth: 240, // Default is 240
+        //edge: 'left', // Choose the horizontal origin
+        //closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        //draggable: true // Choose whether you can drag to open on touch screens
+    });
 </script>
